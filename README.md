@@ -10,7 +10,6 @@ docker run \
     -e S3_BUCKET=abc \
     -e S3_KEY=/ \
     -e SSH_KEY=xxx \
-    --privileged \
     -p 2222:22 \
     -d \
     sftp-to-s3
