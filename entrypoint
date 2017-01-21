@@ -2,7 +2,8 @@
 
 adduser --disabled-password --gecos "" $SFTP_USER
 
-echo "$SFTP_USER:$SFTP_PASSWORD" | chpasswd 
+echo "$SFTP_USER:$SFTP_PASSWORD" | chpasswd
+mkdir /home/$SFTP_USER/.ssh
 echo $SSH_KEY >> /home/$SFTP_USER/.ssh/authorized_keys
 chown $SFTP_USER /home/$SFTP_USER/.ssh/authorized_keys
 chmod 600 /home/$SFTP_USER/.ssh/authorized_keys
