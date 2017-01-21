@@ -21,13 +21,6 @@ RUN chmod +x /entrypoint
 ENV SFTP_USER=sftp
 ENV SFTP_PASSWORD=changeme1
 
-# S3 configuration
-ENV S3_IDENTITY
-ENV S3_CREDENTIAL
-ENV S3_BUCKET
-ENV S3_KEY
-ENV SSH_KEY
-
 EXPOSE 22
 
 ENTRYPOINT ["/entrypoint"]
