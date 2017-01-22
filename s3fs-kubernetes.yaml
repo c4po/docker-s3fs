@@ -12,6 +12,8 @@ spec:
       containers:
       - name: s3fs-app
         image: kubernetesio/s3fs
+        securityContext:
+          privileged: true
         ports:
         - containerPort: 22
         env:
@@ -36,7 +38,10 @@ spec:
               name: s3fs-secret
               key: aws_secretkey
         - name: S3_BUCKET
-          value: aws.amazon.com
+          valueFrom:
+            secretKeyRef:
+              name: s3fs-secret
+              key: s3_bucket
         - name: S3_KEY
           value: /
         - name: SSH_KEY

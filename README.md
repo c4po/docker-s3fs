@@ -1,15 +1,16 @@
-A docker image for s3fs-fuse https://github.com/s3fs-fuse/s3fs-fuse
+# Run a SFTP server with AWS S3 storage in Kubernetes
 
 
-Download the secret file template.
 
-./s3fs-secret.yaml
-
-use base64 to encode values.
-
-
+## Run in Kubernetes
 ```
-kubectl create -f s3fs-secret.yaml
-kubectl create -f https://raw.githubusercontent.com/c4po/docker-s3fs/master/s3fs-kubernetes.yaml
+export AWS_ACCESS_KEY_ID=xxxxx
+export AWS_SECRET_ACCESS_KEY=xxxx
+export SFTP_USER=admin
+export SFTP_PASSWORD=password
+export SSH_KEY=~/.ssh/id_rsa.pub
+export S3_BUCKET=mybucket
+export S3_KEY=/
+make
 ```
 
