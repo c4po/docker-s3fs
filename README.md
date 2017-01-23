@@ -2,6 +2,7 @@
 
 
 
+
 ## Run in Kubernetes
 ```
 export AWS_ACCESS_KEY_ID=xxxxx
@@ -14,3 +15,4 @@ export S3_KEY=/
 make
 ```
 
+details http://blog.bonesoul.com/sftp-s3-kubernetes/

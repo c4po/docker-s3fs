@@ -58,7 +58,8 @@ spec:
   ports:
   - port: 22
     targetPort: 22
+    nodePort: 30022
     protocol: TCP
-  type: LoadBalancer
+  type: nodePort
   selector:
     k8s-app: s3fs-app
