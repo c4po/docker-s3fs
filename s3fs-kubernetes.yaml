@@ -60,6 +60,6 @@ spec:
     targetPort: 22
     nodePort: 30022
     protocol: TCP
-  type: nodePort
+  type: NodePort
   selector:
     k8s-app: s3fs-app
