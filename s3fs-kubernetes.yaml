@@ -1,8 +1,11 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: s3fs-deployment
 spec:
+  selector:
+    matchLabels:
+      k8s-app: s3fs-app
   replicas: 1
   template:
     metadata:
@@ -60,6 +63,6 @@ spec:
     targetPort: 22
     nodePort: 30022
     protocol: TCP
-  type: nodePort
+  type: NodePort
   selector:
     k8s-app: s3fs-app
