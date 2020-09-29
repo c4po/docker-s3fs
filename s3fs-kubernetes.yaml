@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: s3fs-deployment
 spec:
+  selector:
+    matchLabels:
+      k8s-app: s3fs-app
   replicas: 1
   template:
     metadata:
